@@ -1,30 +1,24 @@
 # 100 Days Of Code - Log
 
-### Day 0: February 30, 2016 (Example 1)
-##### (delete me or comment me out)
+### Day 1: 2021-03-13
 
-**Today's Progress**: Fixed CSS, worked on canvas functionality for the app.
+- I played with `mix` and `iex` to remember basic stuff
+- I inspected [IEx.Helpers](https://hexdocs.pm/iex/IEx.Helpers.html) and I found/remembered interesting stuff such as:
+  - `h/1` to see module/function documentation
+  - `ls/0` and `ls/1` to list current directory or another one
+  - `i/1` to inspect data types, related modules and implemented protocols
+  - `c/1` to compile a standalone source file
+  - `exports/1` to see all functions and macros exported by a module
+- `IEx.pry()` brings me to the context where I insert `require IEx; IEx.pry()`
+- `mix test --cover` is builtin and a nice code coverage tool, but [excoveralls](https://hexdocs.pm/excoveralls) seems even better and it has an awesome [html report](https://hexdocs.pm/excoveralls/readme.html#mix-coveralls-html-show-coverage-as-html-report)
 
-**Thoughts:** I really struggled with CSS, but, overall, I feel like I am slowly getting better at it. Canvas is still new for me, but I managed to figure out some basic functionality.
+Interesting projects I may use to study or to try a small contribution:
 
-**Link to work:** [Calculator App](http://www.example.com)
+- https://github.com/warmwaffles/exqlite
+- https://github.com/whitepaperclip/live_phone
+- https://github.com/patrykwozinski/youtex
+- https://github.com/gmartsenkov/dry_validation
+- https://github.com/zwelden/taskerville
+- https://github.com/devstopfix/plug-ratelimit
+- https://github.com/Simrayz/foresight
 
-### Day 0: February 30, 2016 (Example 2)
-##### (delete me or comment me out)
-
-**Today's Progress**: Fixed CSS, worked on canvas functionality for the app.
-
-**Thoughts**: I really struggled with CSS, but, overall, I feel like I am slowly getting better at it. Canvas is still new for me, but I managed to figure out some basic functionality.
-
-**Link(s) to work**: [Calculator App](http://www.example.com)
-
-
-### Day 1: June 27, Monday
-
-**Today's Progress**: I've gone through many exercises on FreeCodeCamp.
-
-**Thoughts** I've recently started coding, and it's a great feeling when I finally solve an algorithm challenge after a lot of attempts and hours spent.
-
-**Link(s) to work**
-1. [Find the Longest Word in a String](https://www.freecodecamp.com/challenges/find-the-longest-word-in-a-string)
-2. [Title Case a Sentence](https://www.freecodecamp.com/challenges/title-case-a-sentence)
