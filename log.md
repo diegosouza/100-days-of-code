@@ -22,3 +22,8 @@ Interesting projects I may use to study or to try a small contribution:
 - https://github.com/devstopfix/plug-ratelimit
 - https://github.com/Simrayz/foresight
 
+### Day 2: 2021-03-14
+
+- [Issue opened](https://github.com/parroty/excoveralls/issues/253) for excoveralls
+- [Played with typespecs in a project](https://github.com/diegosouza/joi/commit/33a49d55d1eb15e9fb07da7543fd9fce6ca59409). Unfortunately, I could not express a typespec for the current structure (list containing atom + several tuples) without a deep refactoring. Sample: `[:string, min_length: 6]`
+- I called `mix dialyzer` maybe for the first time :thinking:
