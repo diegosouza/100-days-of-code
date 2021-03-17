@@ -65,3 +65,9 @@ Interesting projects I found:
 - Started the [Robot Simulator challenge on exercism](https://github.com/diegosouza/exercism/commit/5921be5d1fab0f70937e4b3907fdd09c8753eac5)
 - Started using [watchexec](https://github.com/watchexec/watchexec) to rerun tests after file changes
 
+### Day 5: 2021-03-17
+
+- Created guards using `defguard`
+- Learned I should avoid putting tuples inside structs, maps and nested structures (they're not good to traverse/access/update) 
+- [Finished the Robot Simulator challenge](https://github.com/diegosouza/exercism/blob/af6581a05c71fd770516afeb81707f7386ca96b4/elixir/robot-simulator/lib/robot_simulator.ex) from exercism
+
