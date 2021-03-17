@@ -55,3 +55,13 @@ end
 Interesting projects I found:
 - [typed_struct](https://github.com/ejpcmac/typed_struct) to define typed structs without boilerplate
 - [exconstructor](https://hex.pm/packages/exconstructor) to create structs from JSON
+
+### Day 4: 2021-03-16
+
+- A function with multiple clauses and default values [must have a function head, declaring the defaults](https://elixir-lang.org/getting-started/modules-and-functions.html#default-arguments)
+- Solved an [exercism refactoring challenge](https://exercism.io/my/solutions/29a254e2ed5b4ca282d23e78a7811f1f):
+  - [Initial code](https://github.com/diegosouza/exercism/blob/05cfc5b96c1389126cc23c00312a5291604aba56/elixir/markdown/lib/markdown.ex)
+  - [Slightly refactored code](https://github.com/diegosouza/exercism/blob/b1c0806610353350a2b083bdebcdd8217d2bd2a2/elixir/markdown/lib/markdown.ex). Harder than I expected. Later I'll read other people's solution to learn from my weaknesses
+- Started the [Robot Simulator challenge on exercism](https://github.com/diegosouza/exercism/commit/5921be5d1fab0f70937e4b3907fdd09c8753eac5)
+- Started using [watchexec](https://github.com/watchexec/watchexec) to rerun tests after file changes
+
