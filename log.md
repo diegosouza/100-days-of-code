@@ -71,3 +71,8 @@ Interesting projects I found:
 - Learned I should avoid putting tuples inside structs, maps and nested structures (they're not good to traverse/access/update) 
 - [Finished the Robot Simulator challenge](https://github.com/diegosouza/exercism/blob/af6581a05c71fd770516afeb81707f7386ca96b4/elixir/robot-simulator/lib/robot_simulator.ex) from exercism
 
+### Day 6: 2021-03-18
+
+- Studied [a good example](https://github.com/diegosouza/exercism/commit/13db2bbbed3f4b788a2d847b10ed854fd122a786) how pattern matching with strings + recursion can be powerful
+- Played with the String module + regex
+- Started the List Ops challenge from exercism
