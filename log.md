@@ -76,3 +76,9 @@ Interesting projects I found:
 - Studied [a good example](https://github.com/diegosouza/exercism/commit/13db2bbbed3f4b788a2d847b10ed854fd122a786) how pattern matching with strings + recursion can be powerful
 - Played with the String module + regex
 - Started the List Ops challenge from exercism
+
+### Day 7: 2021-03-19
+
+- Learned I need to call `mix text` inside `iex` explicitly to debug using `require IEx; IEx.pry()`: `iex -S mix test`
+- [Finished the List Ops challenge](https://github.com/diegosouza/exercism/blob/90dddd65139048de887cae841aeee8adaeeb0566/elixir/list-ops/lib/list_ops.ex) from exercism. It was a big challenge to me
+- `cons` operator (`|`) used several times, like never before
