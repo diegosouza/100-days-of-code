@@ -82,3 +82,9 @@ Interesting projects I found:
 - Learned I need to call `mix text` inside `iex` explicitly to debug using `require IEx; IEx.pry()`: `iex -S mix test`
 - [Finished the List Ops challenge](https://github.com/diegosouza/exercism/blob/90dddd65139048de887cae841aeee8adaeeb0566/elixir/list-ops/lib/list_ops.ex) from exercism. It was a big challenge to me
 - `cons` operator (`|`) used several times, like never before
+
+### Day 8: 2021-03-20
+
+- Played a little with the [youtex](https://github.com/patrykwozinski/youtex) codebase
+- Sent [a tiny PR](https://github.com/patrykwozinski/youtex/pull/3) for the `youtex` project. Probably others will arrive
+- Realized I have to study macros seriously. They're essential to create DSLs
