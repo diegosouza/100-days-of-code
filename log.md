@@ -88,3 +88,31 @@ Interesting projects I found:
 - Played a little with the [youtex](https://github.com/patrykwozinski/youtex) codebase
 - Sent [a tiny PR](https://github.com/patrykwozinski/youtex/pull/3) for the `youtex` project. Probably others will arrive
 - Realized I have to study macros seriously. They're essential to create DSLs
+
+### Day 9: 2021-03-21
+
+After watching [The Upside Down Dimension of Elixir - An Intro to Metaprogramming](https://www.youtube.com/watch?v=EFAgc7YqDP8) my comprehension about macros is really better:
+
+- Macros are in general AST -> AST, usually with a 3 elements tuple like this: `{atom() | tuple(), keyword_metadata(), [param1, param2]}` (there are some exceptions)
+- `quote(opts, block)` transforms the block content into AST. Something like:
+
+```elixir
+quote do
+  sum(1, 2, 3)
+end
+
+# {:sum, [], [1,2,3]}
+```
+
+- `unquote(expression)` transforms AST to normal values/expressions. Depending on the data, `Macro.escape(value)` is also needed
+- Contexts:
+  - Macro contexxt: before the quote block
+  - Caller's context: inside the quote block
+- `use(module, opts \\ [])` is a macro to call the `module.__using__()` to the caller's context
+
+More contributions to [patrykwozinski/youtex](https://github.com/patrykwozinski/youtex). One issue + 2 PRs:
+
+- [https://github.com/patrykwozinski/youtex/issues/5](https://github.com/patrykwozinski/youtex/issues/5)
+- [https://github.com/patrykwozinski/youtex/pull/6](https://github.com/patrykwozinski/youtex/pull/6)
+- [https://github.com/patrykwozinski/youtex/pull/4](https://github.com/patrykwozinski/youtex/pull/4)
+
