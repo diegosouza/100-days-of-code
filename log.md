@@ -116,3 +116,12 @@ More contributions to [patrykwozinski/youtex](https://github.com/patrykwozinski/
 - [https://github.com/patrykwozinski/youtex/pull/6](https://github.com/patrykwozinski/youtex/pull/6)
 - [https://github.com/patrykwozinski/youtex/pull/4](https://github.com/patrykwozinski/youtex/pull/4)
 
+### Day 10: 2021-03-22
+
+2 PRs:
+
+- [https://github.com/patrykwozinski/youtex/pull/7](https://github.com/patrykwozinski/youtex/pull/7)
+- Second one to be submitted tomorrow
+
+Also I learned multiple when guard clauses have `or` effect
+
