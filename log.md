@@ -125,3 +125,10 @@ More contributions to [patrykwozinski/youtex](https://github.com/patrykwozinski/
 
 Also I learned multiple when guard clauses have `or` effect
 
+### Day 11: 2021-03-23
+
+Played with the youtex codebase and I sent [one PR](https://github.com/patrykwozinski/youtex/pull/9)
+
+Feeling a lot more confident to do some refactoring (already started)
+
+-
