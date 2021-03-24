@@ -131,3 +131,6 @@ Played with the [youtex](https://github.com/patrykwozinski/youtex) codebase and 
 
 Feeling a lot more confident to do some refactoring (already started)
 
+### Day 12: 2021-03-24
+
+My first [refactoring PR with substantial changes](https://github.com/patrykwozinski/youtex/pull/10) for an Elixir project, including some tests (where no one existed before)
