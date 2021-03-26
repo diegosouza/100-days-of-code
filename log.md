@@ -134,3 +134,20 @@ Feeling a lot more confident to do some refactoring (already started)
 ### Day 12: 2021-03-24
 
 My first [refactoring PR with substantial changes](https://github.com/patrykwozinski/youtex/pull/10) for an Elixir project, including some tests (where no one existed before)
+
+### Day 13: 2021-03-25
+
+Today I learned:
+
+- Every `binary` is a `bitstring`, but not all bitstrings are binaries (data type)
+- `<<1,2,3::4>>` every element has 1 byte (8 bits) except the third element (it has 4 bits), so the value is a bitstring but not a binary (not a multiple of 8)
+- Strings in Elixir are binaries
+- ``<<head:utf8, tail::binary> = my_string` is for bitstrings what [head | tail]` is for lists
+- `?a` gives me the code point for the char `a`. Pattern matching the char: `0x0061 = 97 = ?a`
+
+Great example for binary string with pattern matching:
+
+```elixir
+<<cpf_first_chunk::binary-size(3), cpf_second_chunk::binary-size(3), cpf_third_chunk::binary-size(3), cpf_digits::binary-size(2)>>` = "12345678910"
+"#{cpf_first_chunk}.#{cpf_second_chunk}.#{cpf_third_chunk}-#{cpf_digits}"
+```
