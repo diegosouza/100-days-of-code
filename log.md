@@ -68,7 +68,7 @@ Interesting projects I found:
 ### Day 5: 2021-03-17
 
 - Created guards using `defguard`
-- Learned I should avoid putting tuples inside structs, maps and nested structures (they're not good to traverse/access/update) 
+- Learned I should avoid putting tuples inside structs, maps and nested structures (they're not good to traverse/access/update)
 - [Finished the Robot Simulator challenge](https://github.com/diegosouza/exercism/blob/af6581a05c71fd770516afeb81707f7386ca96b4/elixir/robot-simulator/lib/robot_simulator.ex) from exercism
 
 ### Day 6: 2021-03-18
@@ -151,3 +151,30 @@ Great example for binary string with pattern matching:
 <<cpf_first_chunk::binary-size(3), cpf_second_chunk::binary-size(3), cpf_third_chunk::binary-size(3), cpf_digits::binary-size(2)>>` = "12345678910"
 "#{cpf_first_chunk}.#{cpf_second_chunk}.#{cpf_third_chunk}-#{cpf_digits}"
 ```
+
+### Day 14: 2021-03-26
+
+Interesting projects I found:
+
+- https://github.com/still-ex/still
+
+I've tried to use [bakeware](https://github.com/bake-bake-bake/bakeware) to generate a binary like a standalone file webserver (through cowboy). I realized I need to review GenServers and Supervisors.
+
+Recap:
+
+- GenServer (I forgot the "client" and "server" side differences)
+- The goal of a GenServer is to abstract the receive loop for developers
+- `handle_info/2` is often used with `Kernel.send` and `Process.send_after` to do some periodic task
+- The `:sys` module from Erlang provides some great debugging + statistical info/tracing
+- Application is a behaviour. It has it's own environment (that can be defined in `application/0`) and several methods to handle the lifecycle
+- Agent is a Genserver to keep state (simpler)
+- Task is a for short-lived async computation
+- Supervisor strategies:
+  - `:one_to_one` if one children dies, it's the only restarted
+  - `:one_for_all` if one children dies, all supervised children are restarted
+  - `:rest_for_one` restarts the dead one and the others after/below it
+  - `:simple_one_for_one` is deprecated in favor of `DynamicSupervisor`
+  - the `restart` option passed to the child takes precedence over one of the stategies above:
+    - `:permanent` always restart
+    - `:transient` restarts when crashed
+    - `:temporary` never restarts
