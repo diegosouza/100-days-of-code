@@ -158,7 +158,7 @@ Interesting projects I found:
 
 - https://github.com/still-ex/still
 
-I've tried to use [bakeware](https://github.com/bake-bake-bake/bakeware) to generate a binary like a standalone file webserver (through cowboy). I realized I need to review GenServers and Supervisors.
+I tried to use [bakeware](https://github.com/bake-bake-bake/bakeware) to generate a binary like a standalone file webserver (through cowboy). I realized I need to review GenServers and Supervisors.
 
 Recap:
 
@@ -178,3 +178,51 @@ Recap:
     - `:permanent` always restart
     - `:transient` restarts when crashed
     - `:temporary` never restarts
+
+### Day 15: 2021-03-27
+
+Golden resource of the day: [https://kobrakai.de/kolumne/child-specs-in-elixir/](https://kobrakai.de/kolumne/child-specs-in-elixir/)
+
+Supervisor child spec map (`:restart`, `:shutdown`, `:type` and `:modules` are optional with defaults):
+
+```elixir
+%{
+  id: Stack,
+  start: {Stack, :start_link, [[:hello]]}
+}
+```
+
+The several ways of doing it may be confusing for beginners:
+
+```elixir
+children = [
+  # Module only
+  MyApp.Supervisor,
+  # Tuple
+  {Registry, keys: :unique, name: Registry.ViaTest},
+  # One-off way to build a child spec map 
+  :poolboy.child_spec(name, pool_args, worker_args),
+  # Inline child spec map
+  %{id: Stack, start: {Stack, :start_link, [[:hello]]}}
+]
+```
+
+**MyApp.Supervisor** is a shortcut for **{MyApp.Supervisor, []}** and therefore **MyApp.Supervisor.child_spec([])**.
+
+The old way was something like this:
+
+```elixir
+children = [
+  worker(MyWorker, [arg1, arg2, arg3]),
+  supervisor(MySupervisor, [arg1])
+]
+```
+
+When we call `use GenServer` or `use Supervisor`, both inject to us a `child_spec/1`.
+
+**Cowboy and Plug**
+
+- `cowboy` is an erlang package, `plug_cowboy` is an Elixir package with `cowboy` and `plug` as dependencies
+- A Plug should have the methods `init(options)` and `call(conn, opts)`
+- `use Plug.Router` with `plug :match` and `plug :dispatch` + routes creates a valid Plug 
+- `plug Plug.Logger` before `:match`and `:dispatch` enables logging
