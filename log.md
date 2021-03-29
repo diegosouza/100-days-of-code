@@ -226,3 +226,9 @@ When we call `use GenServer` or `use Supervisor`, both inject to us a `child_spe
 - A Plug should have the methods `init(options)` and `call(conn, opts)`
 - `use Plug.Router` with `plug :match` and `plug :dispatch` + routes creates a valid Plug 
 - `plug Plug.Logger` before `:match`and `:dispatch` enables logging
+
+### Day 16: 2021-03-28
+
+Played with some main Plug modules and concepts.
+
+Together with [bakeware](https://github.com/bake-bake-bake/bakeware/), I already can start a local and extremely basic file server, parsing parameters with [OptionParser](https://hexdocs.pm/elixir/OptionParser.html).
