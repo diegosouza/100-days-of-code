@@ -232,3 +232,16 @@ When we call `use GenServer` or `use Supervisor`, both inject to us a `child_spe
 Played with some main Plug modules and concepts.
 
 Together with [bakeware](https://github.com/bake-bake-bake/bakeware/), I already can start a local and extremely basic file server, parsing parameters with [OptionParser](https://hexdocs.pm/elixir/OptionParser.html).
+
+### Day 17: 2021-03-29
+
+Registry:
+
+- Interesting to avoid reaching the BEAM's limit for atoms
+- Often used with `DynamicSupervisor`
+- It uses ETS tables
+- To use with `:via` tuple
+
+The binary generated with `bakeware` didn't work as expected. I stopped with a basic file share using cowboy and few options.
+
+I played with `GenStage` using the basic documentation (1 producer + 1 producer consumer + 1 consumer).
