@@ -245,3 +245,33 @@ Registry:
 The binary generated with `bakeware` didn't work as expected. I stopped with a basic file share using cowboy and few options.
 
 I played with `GenStage` using the basic documentation (1 producer + 1 producer consumer + 1 consumer).
+
+### Day 18: 2021-03-30
+
+Today I learned:
+
+- `Mix.Task.run "task.name"` can be used from an iex session 
+
+**Ecto**
+
+Modules:
+
+- Schema
+  - `schema`
+  - `embedded_schema` (only validation)
+- Changeset
+  - `cast`
+    - `cast(user, %{to_update: "value"}, [:to_update])`
+- Query
+  - `from(Ecto.Schema.t, where: [attribute: "value"], select: [:another_attribute])`
+  - `from(u in User, where: u.id == 1, select: u.email)`
+- Repo
+  - `all(query) :: [Ecto.Schema.t] | []`
+  - `get(User, 1) :: User.t | nil`
+  - `get_by(User, email: "email@email.com") :: User.t | nil`
+
+Migrations:
+
+- Are usually stored at `priv/repo/migrations`
+- `references` is a function (not a keyword param) to create FK
+
