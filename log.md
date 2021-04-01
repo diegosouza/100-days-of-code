@@ -275,3 +275,19 @@ Migrations:
 - Are usually stored at `priv/repo/migrations`
 - `references` is a function (not a keyword param) to create FK
 
+### Day 19: 2021-03-31
+
+**Ecto**
+
+Schemaless queries:
+
+```elixir
+from("users", select: [:name, :email]) |> Repo.all
+
+[
+  %{email: "someone@gmail.com", name: "Someone's name"},
+  %{email: "someone_else@gmail.com", name: "Someone else's name"}
+]
+```
+
+Resource of the day: [The Little Ecto Cookbook](https://dashbit.co/ebooks/the-little-ecto-cookbook)
