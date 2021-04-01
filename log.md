@@ -291,3 +291,64 @@ from("users", select: [:name, :email]) |> Repo.all
 ```
 
 Resource of the day: [The Little Ecto Cookbook](https://dashbit.co/ebooks/the-little-ecto-cookbook)
+
+
+### Day 20: 2021-04-01
+
+Common pattern for creating and changing Ecto schemas:
+
+```elixir
+@fields [:field1, :field2]
+@required_fields [:field1]
+
+def changeset(struct, params) do
+  struct
+  |> cast(params, @fields)
+  |> validate_required(@required_fields)
+  |> validate_length(:field1, min: 1, max: 10)
+  |> validate_format(:another_field, ~r/^\w+/, "must have a word")
+  # more validations in the pipe
+```
+
+**Ecto.Enum**
+
+`Migration.execute/1` can be used in the migration to create the type in Postgres. Something like:
+
+```elixir
+def up do
+  execute("create type post_status as enum ('draft', 'published')")
+
+  alter table("posts") do
+    add :status, :post_status
+  end
+end
+```
+
+And the field inside the schema:
+
+```elixir
+field :status, Ecto.Enum, values: [:draft, :published], default: :draft
+```
+
+**Associations**
+
+To load associations, we can:
+
+1. Preload as a `Query` option:
+
+```elixir
+Repo.all from u in User, preload: [:posts]
+```
+
+2. Create a query with struct + association (atom):
+
+```elixir
+user = Repo.get User, 1
+Repo.all Ecto.assoc(user, :posts)
+```
+
+3. Pipe to `Repo.preload`:
+
+```elixir
+Repo.get(User, 1) |> Repo.preload(:posts)
+```
