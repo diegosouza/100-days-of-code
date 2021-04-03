@@ -362,10 +362,10 @@ Repo.get(User, 1) |> Repo.preload(:posts)
 Phoenix injects a `Helpers` module. So we'll have 2 useful functions:
 
 - `something_path` (for relative paths)
-- `something_url (for complete urls)
+- `something_url` (for complete urls)
 
 ```elixir
-# page_{path,url} because it's for a PageController
+# page_path and page_url because it's related to PageController
 
 MyAppWeb.Router.Helpers.page_path(conn_or_endpoint, :show, "hello", some: "query")
 # => "/pages/hello?some=query"
@@ -388,7 +388,7 @@ scope "/api/v1", MyAppWeb, as: :api_v1 do
   get "/pages/:id", PageController, :show
 end
 
-# the function for the route above would be: `api_v1_page_path`
+# the function for the route above would be: api_v1_page_path
 
 ```
 
