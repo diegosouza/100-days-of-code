@@ -200,7 +200,7 @@ children = [
   MyApp.Supervisor,
   # Tuple
   {Registry, keys: :unique, name: Registry.ViaTest},
-  # One-off way to build a child spec map 
+  # One-off way to build a child spec map
   :poolboy.child_spec(name, pool_args, worker_args),
   # Inline child spec map
   %{id: Stack, start: {Stack, :start_link, [[:hello]]}}
@@ -224,7 +224,7 @@ When we call `use GenServer` or `use Supervisor`, both inject to us a `child_spe
 
 - `cowboy` is an erlang package, `plug_cowboy` is an Elixir package with `cowboy` and `plug` as dependencies
 - A Plug should have the methods `init(options)` and `call(conn, opts)`
-- `use Plug.Router` with `plug :match` and `plug :dispatch` + routes creates a valid Plug 
+- `use Plug.Router` with `plug :match` and `plug :dispatch` + routes creates a valid Plug
 - `plug Plug.Logger` before `:match`and `:dispatch` enables logging
 
 ### Day 16: 2021-03-28
@@ -250,7 +250,7 @@ I played with `GenStage` using the basic documentation (1 producer + 1 producer 
 
 Today I learned:
 
-- `Mix.Task.run "task.name"` can be used from an iex session 
+- `Mix.Task.run "task.name"` can be used from an iex session
 
 **Ecto**
 
