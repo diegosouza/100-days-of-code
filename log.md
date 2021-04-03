@@ -352,3 +352,93 @@ Repo.all Ecto.assoc(user, :posts)
 ```elixir
 Repo.get(User, 1) |> Repo.preload(:posts)
 ```
+
+### Day 21: 2021-04-02
+
+**Phoenix Framework**
+
+**Router**
+
+Phoenix injects a `Helpers` module. So we'll have 2 useful functions:
+
+- `something_path` (for relative paths)
+- `something_url (for complete urls)
+
+```elixir
+# page_{path,url} because it's for a PageController
+
+MyAppWeb.Router.Helpers.page_path(conn_or_endpoint, :show, "hello", some: "query")
+# => "/pages/hello?some=query"
+
+MyAppWeb.Router.Helpers.page_url(conn_or_endpoint, :show, "hello", some: "query")
+# => "http://example.com/pages/hello?some=query"
+
+# routes can also be named/aliased:
+
+get "/pages/:page", PageController, :show, as: :special_page
+
+# the named helper will be:
+
+MyAppWeb.Router.Helpers.special_page_path(conn, :show, "hello")
+# => "/pages/hello"
+
+# the same for scopes
+
+scope "/api/v1", MyAppWeb, as: :api_v1 do
+  get "/pages/:id", PageController, :show
+end
+
+# the function for the route above would be: `api_v1_page_path`
+
+```
+
+**Controller**
+
+The call `use YourAppWeb, :controller` imports functions from:
+
+- `Plug.Conn`
+- `Phoenix.Controller`
+
+Controllers also can call plugs. They can act like Laravel Middlewares, to redirect and to halt a request before the controller action execution.
+
+The plugs inside controllers can have `guards`. The variables `conn` and `action` will be available.
+
+A controller is also a plug, where an action execution would be like: `UserController.call(conn, :show)`.
+
+`action_fallback` can be used to redirect when a `with do` block does not provide an else + render call.
+
+**View**
+
+Under the hood, it is:
+
+```elixir
+Phoenix.View.render(YourApp.UserView, "index.html", name: "John Doe")
+# => {:safe, "Hello John Doe"}
+```
+
+The two main functions:
+
+```elixir
+render_one user, UserView, "show.html"
+render_many users, UserView, "show.html"
+```
+
+Common approach:
+
+```elixir
+defmodule HelloWeb.PageView do
+  use HelloWeb, :view
+
+  def render("index.json", %{pages: pages}) do
+    %{data: render_many(pages, HelloWeb.PageView, "page.json")}
+  end
+
+  def render("show.json", %{page: page}) do
+    %{data: render_one(page, HelloWeb.PageView, "page.json")}
+  end
+
+  def render("page.json", %{page: page}) do
+    %{title: page.title}
+  end
+end
+```
