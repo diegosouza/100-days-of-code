@@ -442,3 +442,9 @@ defmodule HelloWeb.PageView do
   end
 end
 ```
+
+### Day 22: 2021-04-03
+
+[A documentation PR](https://github.com/patrykwozinski/youtex/pull/14) was opened.
+
+[A project](https://github.com/diegosouza/nou_rau) was started.
