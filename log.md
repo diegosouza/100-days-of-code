@@ -448,3 +448,9 @@ end
 [A documentation PR](https://github.com/patrykwozinski/youtex/pull/14) was opened.
 
 [A project](https://github.com/diegosouza/nou_rau) was started.
+
+### Day 23: 2021-04-04
+
+A couple of commits in [my pet project](https://github.com/diegosouza/nou_rau/commits/main) using Phoenix LiveVew.
+
+Today I discovered the [live_redirect helper](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.Helpers.html?#live_redirect/2) to generate a simple link to another LiveView.
