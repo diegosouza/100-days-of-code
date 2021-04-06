@@ -454,3 +454,9 @@ end
 A couple of commits in [my pet project](https://github.com/diegosouza/nou_rau/commits/main) using Phoenix LiveVew.
 
 Today I discovered the [live_redirect helper](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.Helpers.html?#live_redirect/2) to generate a simple link to another LiveView.
+
+### Day 24: 2021-04-05
+
+More commits in [my pet project](https://github.com/diegosouza/nou_rau/commits/main).
+
+Exploring the LiveView update details, after watching ["Phoenix LiveView Uploads Deep Dive" from Chris McCord](https://www.youtube.com/watch?v=PffpT2eslH8).
