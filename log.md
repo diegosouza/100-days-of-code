@@ -460,3 +460,7 @@ Today I discovered the [live_redirect helper](https://hexdocs.pm/phoenix_live_vi
 More commits in [my pet project](https://github.com/diegosouza/nou_rau/commits/main).
 
 Exploring the LiveView update details, after watching ["Phoenix LiveView Uploads Deep Dive" from Chris McCord](https://www.youtube.com/watch?v=PffpT2eslH8).
+
+### Day 25: 2021-04-06
+
+Tried to solve the "Poker" Exercism challenge. I didn't succeed.
