@@ -464,3 +464,12 @@ Exploring the LiveView update details, after watching ["Phoenix LiveView Uploads
 ### Day 25: 2021-04-06
 
 Tried to solve the "Poker" Exercism challenge. I didn't succeed.
+
+### Day 26: 2021-04-07
+
+Changes in my [pet project](https://github.com/diegosouza/nou_rau):
+
+- Category change in document editing
+- Category nesting using the [arbor package](https://github.com/coryodaniel/arbor)
+
+Feeling a little bit more familiar with Phoenix and Ecto.
