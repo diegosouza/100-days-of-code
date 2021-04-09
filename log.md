@@ -473,3 +473,11 @@ Changes in my [pet project](https://github.com/diegosouza/nou_rau):
 - Category nesting using the [arbor package](https://github.com/coryodaniel/arbor)
 
 Feeling a little bit more familiar with Phoenix and Ecto.
+
+### Day 27: 2021-04-08
+
+Explored more upload management and details in my [pet project](https://github.com/diegosouza/nou_rau).
+
+The clean api to [return a file as download](https://hexdocs.pm/phoenix/Phoenix.Controller.html?#send_download/3) is beautiful.
+
+The main thing bothers me is the default LiveView generated code approach (with modals). After a better understanding I will try things by myself.
